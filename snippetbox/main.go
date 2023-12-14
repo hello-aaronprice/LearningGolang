@@ -1,14 +1,16 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
+	"strconv"
 )
 
 // Define a home handler function which writes a byte clise containing
 // "Hello from Snippetbox" as the response body
 func home(w http.ResponseWriter, r *http.Request) {
-	// Check if the current request URL path exactly matches "/". If it doesn't use
+	// Check if the cuRepo for GoLang learningrrent request URL path exactly matches "/". If it doesn't use
 	// the http.NotFound() function to send a 404 response to the client
 	// Importantly, we then return from the handler. If we don't return the handler
 	// would keep executing and also write the "Hello from snippetbox" message
@@ -21,6 +23,9 @@ func home(w http.ResponseWriter, r *http.Request) {
 
 // Add a snippetView handler function
 func snippetView(w http.ResponseWriter, r *http.Request) {
+	// Exract the value of the id parameter from the query string and try to convert it to an integer using the strconv.Atoi() function
+	// If it can't be converted to an integer, or the value is less than 1, we return a 404 page not found response
+	id, err 
 	w.Write([]byte("Display a specific snippet..."))
 }
 
