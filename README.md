@@ -1,44 +1,57 @@
 # LearningGolang
 
-Repo for GoLang learning
+### Context
+
+Repo for learning Golang following documentation from Alex Edwards book '[Let's Go](https://lets-go.alexedwards.net)'
+
+I'm a DevOps engineer with the majority of my experience being in Ops, I'm trying to learn the Dev side of things to continue to level up in my career
 
 ## Project Goals
 
 ### Goals
 
-Build "enterprise" web application from stratch using Go
-Should include
+Build "Enterprise" Web Application from stratch using Golang. The project should include the following
 
 - Unit and E2E tests
-- Secure authentication access
+
+- Secure and persistent authentication
+
 - Database
-- Local install instructions
+
+- Setup Instructions and documentation
+
 - Docker and configuration files for isolated development
+
 - Pipeline files for automated deployment
+
 - IaC for hosting Infrastructure
-
-### Context
-
-I'm a DevOps engineer with the majority of my experience being in Ops, I'm trying to learn the Dev side of things to continue to level up in my career
 
 ## Docker
 
-### Run Go in Docker
+### Run Project in Docker
 
-Launch project and files in a Docker container with the local directory mounted to the container
+Setup project and run project in a local Docker container
 
 ```
+
 git clone git@github.com:hello-aaronprice/LearningGolang.git .
+
 cd ./LearningGolang
+
 ./docker-build
+
 ./docker-run
+
 cd snippetbox && go run .
+
 ```
 
 ### Dockerfile
 
 ```
+
 FROM golang:1.21.3 as dev
+
 ```
 
 ### Docker-Build
@@ -46,13 +59,17 @@ FROM golang:1.21.3 as dev
 Builds the docker image using the Dockerfile (above) in the current working directory and tags the image with the name 'my-go:latest'
 
 ```
+
 docker build . -t my-go
+
 ```
 
 ### Docker-Run
 
 ```
-docker  run  -v $PWD:/go/app/  -w  /go/app  --network="host"  --rm  -it  my-go  bash
+
+docker run -v $PWD:/go/app/ -w /go/app --network="host" --rm -it my-go bash
+
 ```
 
 Runs the latest 'my-go' docker image
