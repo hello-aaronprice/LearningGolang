@@ -2,6 +2,25 @@
 
 Repo for GoLang learning
 
+## Project Goals
+
+### Goals
+
+Build "enterprise" web application from stratch using Go
+Should include
+
+- Unit and E2E tests
+- Secure authentication access
+- Database
+- Local install instructions
+- Docker and configuration files for isolated development
+- Pipeline files for automated deployment
+- IaC for hosting Infrastructure
+
+### Context
+
+I'm a DevOps engineer with the majority of my experience being in Ops, I'm trying to learn the Dev side of things to continue to level up in my career
+
 ## Docker
 
 ### Run Go in Docker
