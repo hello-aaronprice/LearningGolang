@@ -6,6 +6,8 @@ Repo for GoLang learning
 
 ### Run Go in Docker
 
+Launch project and files in a Docker container with the local directory mounted to the container
+
 ```
 git clone git@github.com:hello-aaronprice/LearningGolang.git .
 cd ./LearningGolang
@@ -13,8 +15,6 @@ cd ./LearningGolang
 ./docker-run
 cd snippetbox && go run .
 ```
-
-Launch project and files in a Docker container with the local directory mounted to the container
 
 ### Dockerfile
 
