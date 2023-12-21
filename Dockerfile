@@ -1,1 +1,4 @@
-FROM golang:1.21.3 as dev
+FROM golang:1.21.3 
+
+WORKDIR /app
+COPY snippetbox/ .

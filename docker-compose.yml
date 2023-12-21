@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  my-go:
+    image: golang:1.21.3
+    tty: true
+    working_dir: /src/app/snippetbox
+    volumes:
+      - $PWD:/src/app
+    depends_on:
+      - my-db
+    networks:
+      - mynet
+    expose:
+      - "4000"
+
+  my-db:
+    image: mysql:latest
+    restart: always
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysqladmin ping -h 127.0.0.1 --password=P@ssw0rd!23 --silent",
+        ]
+      interval: 3s
+      retries: 5
+      start_period: 30s
+    networks:
+      - mynet
+    expose:
+      - "3306"
+    volumes:
+      - ./data/db:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=snippetbox
+      - MYSQL_ROOT_PASSWORD=P@ssw0rd!23
+
+networks:
+  mynet:
