@@ -29,8 +29,13 @@ Setup project and run project in a local Docker container
 ```
 git clone git@github.com:hello-aaronprice/LearningGolang.git .
 cd ./LearningGolang
+echo "Your Database root user Password here" > secrets/db-password.txt
 docker compose up -d
 ```
+
+### Docker Compose
+
+As the application got more complex and a Database is required. I've added a docker compose file to create both the `my-go` and `my-db` containers with the required configuration setup on the same network whilst exposing the necessary ports to the host
 
 ### Dockerfile
 

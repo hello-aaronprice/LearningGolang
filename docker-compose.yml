@@ -14,7 +14,7 @@ services:
     networks:
       - mynet
     expose:
-      - "4000"
+      - 4000
 
   my-db:
     image: mysql:8.2.0
@@ -25,20 +25,27 @@ services:
       test:
         [
           "CMD-SHELL",
-          "mysqladmin ping -h 127.0.0.1 --password=P@ssw0rd!23 --silent",
+          'mysqladmin ping -h 127.0.0.1 --password="$$(cat /run/secrets/db-password)" --silent',
         ]
       interval: 3s
       retries: 5
       start_period: 30s
+    secrets:
+      - db-password
     networks:
       - mynet
     expose:
-      - "3306"
+      - 3306
     volumes:
       - ./data/db:/var/lib/mysql
+      #- ./.initialize_db:/docker-entrypoint-initdb.d
     environment:
       - MYSQL_DATABASE=snippetbox
-      - MYSQL_ROOT_PASSWORD=P@ssw0rd!23
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db-password
 
 networks:
   mynet:
+
+secrets:
+  db-password:
+    file: .secrets/db-password.txt
