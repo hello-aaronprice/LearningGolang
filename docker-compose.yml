@@ -15,7 +15,7 @@ services:
       - "4000"
 
   my-db:
-    image: mysql:latest
+    image: mysql:8.2.0
     restart: always
     healthcheck:
       test:
