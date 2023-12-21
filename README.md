@@ -29,15 +29,13 @@ Setup project and run project in a local Docker container
 ```
 git clone git@github.com:hello-aaronprice/LearningGolang.git .
 cd ./LearningGolang
-./docker-build
-./docker-run
-cd snippetbox && go run .
+docker compose up -d
 ```
 
 ### Dockerfile
 
 ```
-FROM golang:1.21.3 as dev
+FROM golang:1.21.3
 ```
 
 ### Docker-Build
