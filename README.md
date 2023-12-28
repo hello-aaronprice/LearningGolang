@@ -11,15 +11,15 @@ I'm a DevOps engineer with the majority of my experience being in Ops, I'm tryin
 
 Build "Enterprise" Web Application from scratch using Golang. The project should include the following
 
-- [ ] Unit and E2E tests
-- [ ] Secure and persistent authentication
-- [x] Database
-- [x] Setup Instructions and documentation
-- [x] Docker and configuration files for isolated development
-- [ ] GitHub Action pipeline files for automated deployment
-- [ ] Terraform IaC for hosting in GCP
-- [ ] Metrics and Monitoring
-- [ ] HTMX Frontend
+- Unit and E2E tests
+- Secure and persistent authentication
+- ~~Database~~
+- ~~Setup Instructions and documentation~~
+- ~~Docker and configuration files for isolated development~~
+- GitHub Action pipeline files for automated deployment
+- Terraform IaC for hosting in GCP
+- Metrics and Monitoring
+- HTMX Frontend
 
 ### Todo
 
