@@ -1,6 +1,3 @@
--- Create a new UTF-8 `snippetbox` database
-CREATE DATABASE snippetbox CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
 -- Switch to using the `snippetbox` database
 USE snippetbox;
 
@@ -41,4 +38,4 @@ INSERT INTO snippets (title, content, created, expires) VALUES (
 CREATE USER 'web'@'%';
 GRANT SELECT, INSERT, UPDATE, DELETE ON snippetbox.* TO 'web'@'%';
 -- Important: Make sure to swap 'pass' with a password of your own choosing.
-ALTER USER 'web'@'%' IDENTIFIED BY 'pass';
+ALTER USER 'web'@'%' IDENTIFIED BY 'MyPassword';
