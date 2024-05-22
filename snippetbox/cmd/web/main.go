@@ -29,6 +29,7 @@ func main() {
     }
 
     defer db.Close()
+    
     app := &application{
         logger: logger,
         snippets: &models.SnippetModel{DB: db},
