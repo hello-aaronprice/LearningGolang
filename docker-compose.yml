@@ -48,9 +48,6 @@ services:
       - MYSQL_DATABASE=snippetbox
       - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db-password
 
-networks:
-  my-vnet:
-
 secrets:
   db-password:
     file: .secrets/db-password.txt
