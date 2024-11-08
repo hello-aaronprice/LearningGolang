@@ -53,11 +53,11 @@ cd ./LearningGolang
 
 ### Start the web app
 
-Currently to start the web app I have to shell into the `my-go` container and run `go run ./cmd/web`
+Currently to start the web app I have to shell into the `my-app` container and run `go run ./cmd/web`
 I have a Todo task to resolve this
 
 ```bash
-./docker-exec my-go
+./docker-exec my-app
 > go run ./cmd/web
 ```
 
@@ -69,7 +69,7 @@ docker compose down
 
 ### Docker Compose
 
-As the application got more complex and a Database is required. I've added a docker compose file to create both the `my-go` and `my-db` containers with the required configuration setup on the same network whilst exposing the necessary ports to the host
+As the application got more complex and a Database is required. I've added a docker compose file to create both the `my-app` and `my-db` containers with the required configuration setup on the same network whilst exposing the necessary ports to the host
 The application can be started with
 
 ```bash
@@ -102,17 +102,17 @@ FROM golang:1.21.3
 
 #### Docker-Build
 
-Builds the docker image using the Dockerfile (above) in the current working directory and tags the image with the name 'my-go:latest'
+Builds the docker image using the Dockerfile (above) in the current working directory and tags the image with the name 'my-app:latest'
 
 ```bash
-docker build . -t my-go
+docker build . -t my-app
 ```
 
 #### Docker-Run
 
-Runs the latest 'my-go' docker image
+Runs the latest 'my-app' docker image
 Mounts the current working directory into the /go/app folder on the container and sets the Working Directory there so we do to that location. Sets the networking to the HOST so there is no need to do any port forwarding at the moment `--rm` and `-it` docker run standards. `rm` to keep local machine clean and `it` to enter CLI
 
 ```bash
-docker run -v $PWD:/go/app/ -w /go/app --network="host" --rm -it my-go bash
+docker run -v $PWD:/go/app/ -w /go/app --network="host" --rm -it my-app bash
 ```

@@ -1,4 +1,4 @@
-FROM golang:1.21.3 
+FROM golang:1.23.0
 
 WORKDIR /app
 COPY snippetbox/ .
