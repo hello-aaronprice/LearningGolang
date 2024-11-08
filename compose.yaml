@@ -1,17 +1,19 @@
 version: "3.9"
 services:
   my-app:
-    image: golang:1.23
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: my-app
     hostname: my-app
     tty: true
     working_dir: /src/app/snippetbox
+    expose:
+      - 4000
     develop:
       watch:
-        - action: sync
+        - action: rebuild
           path: ./snippetbox
           target: /src/app/snippetbox
     volumes:
       - $PWD:/src/app
-    expose:
-      - 4000
