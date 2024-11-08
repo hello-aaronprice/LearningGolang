@@ -4,16 +4,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    command: go run main.go
     container_name: my-app
     hostname: my-app
     tty: true
-    working_dir: /src/app/snippetbox
-    expose:
-      - 4000
+    working_dir: /app/snippetbox
+    ports:
+      - "4000:4000"
     develop:
       watch:
-        - action: rebuild
+        - action: sync+restart
           path: ./snippetbox
-          target: /src/app/snippetbox
-    volumes:
-      - $PWD:/src/app
+          target: /app/snippetbox
