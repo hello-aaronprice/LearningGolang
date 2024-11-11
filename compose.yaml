@@ -1,7 +1,8 @@
 version: "3.9"
 services:
-  my-app:
+  dev-app:
     build:
+      target: dev
       context: .
       dockerfile: Dockerfile
     command: go run main.go
