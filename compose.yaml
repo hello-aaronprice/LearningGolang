@@ -15,5 +15,5 @@ services:
     develop:
       watch:
         - action: sync+restart
-          path: ./snippetbox
+          path: ./snippetbox/
           target: /app/snippetbox
