@@ -1,7 +1,7 @@
 .PHONY: up down prune log
 
 up:
-	docker compose -p dev -f compose.yaml up --watch
+	docker compose -p dev -f compose.yaml up --watch --build
 
 down:
 	docker compose -p dev down

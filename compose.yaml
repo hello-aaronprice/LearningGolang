@@ -5,7 +5,7 @@ services:
       target: dev
       context: .
       dockerfile: Dockerfile
-    command: go run main.go
+    command: go run ./cmd/web
     container_name: my-app
     hostname: my-app
     tty: true
